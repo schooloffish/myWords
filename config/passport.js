@@ -1,6 +1,10 @@
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('../app/models/user');
+var Sequelize=require('sequelize');
+
+var sequelize=new Sequelize('mysql://root:123456@localhost:3306/MyWords');
+
+var User = require('../app/models/user')(sequelize);
 
 module.exports = function (passport) {
 	passport.serializeUser(function (user, done) {

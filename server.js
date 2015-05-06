@@ -14,19 +14,19 @@ var configDB = require('./config/database.js');
 var Sequelize=require('sequelize');
 
 var sequelize=new Sequelize('mysql://root:123456@localhost:3306/MyWords');
-var Test=sequelize.define('test',{
-	firstName:{type:Sequelize.STRING,
-		field:'first_name'
-	},
-	lastName:{
-		type:Sequelize.STRING,
-		field:'last_name'
-	}
-},{freezeTableName:true});
-
-Test.findAll({where:{lastName:'liu'}}).then(function (obj,o2,o3) {
-	console.log('lastName: '+obj.dataValues.lastName);	
-});
+//var Test=sequelize.define('test',{
+//	firstName:{type:Sequelize.STRING,
+//		field:'first_name'
+//	},
+//	lastName:{
+//		type:Sequelize.STRING,
+//		field:'last_name'
+//	}
+//},{freezeTableName:true});
+//
+//Test.findAll({where:{lastName:'liu'}}).then(function (obj,o2,o3) {
+//	console.log('lastName: '+obj.dataValues.lastName);	
+//});
 
 //Test.sync({force:true}).then(function () {
 //	return Test.create([{
