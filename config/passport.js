@@ -1,13 +1,13 @@
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('../app/models/user');
 
-module.exports = function (passport) {
+module.exports = function (passport, User) {
     passport.serializeUser(function (user, done) {
         done(null, user.id);
     });
 
     passport.deserializeUser(function (id, done) {
         User.find({where: {id: id}}).then(function (user) {
+            //{id: 123321, username: 'liu qingyu', password: '12412312312312312'}
             done(null, user.dataValues);
         });
     });
