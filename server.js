@@ -15,8 +15,9 @@ var User = require('./app/models/user')(sequelize);
 var Phrase = require('./app/models/phrase')(sequelize);
 
 
-require('./config/passport')(passport,User);
+require('./config/passport')(passport, User);
 
+app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser());
