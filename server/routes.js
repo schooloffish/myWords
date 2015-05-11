@@ -1,9 +1,9 @@
 module.exports = function (app, passport) {
     app.get('/', function (req, res) {
-        res.render('../public/index.ejs');
+        res.render('../client/app/index.ejs');
     });
     app.get('/login', function (req, res) {
-        res.render('../public/login.ejs', {message: req.flash('loginMessage')});
+        res.render('../client/app/login.ejs', {message: req.flash('loginMessage')});
     });
 
     app.post('/login', passport.authenticate('local-login', {
@@ -13,7 +13,7 @@ module.exports = function (app, passport) {
     }));
 
     app.get('/signup', function (req, res) {
-        res.render('../public/signup.ejs', {message: req.flash('signupMessage')});
+        res.render('../client/app/signup.ejs', {message: req.flash('signupMessage')});
     });
 
     app.post('/signup', passport.authenticate('local-signup', {
@@ -23,7 +23,7 @@ module.exports = function (app, passport) {
     }));
 
     app.get('/profile', isLoggedIn, function (req, res) {
-        res.render('../public/profile.ejs');
+        res.render('../client/app/profile.ejs');
     });
 
     app.get('/logout', function (req, res) {
