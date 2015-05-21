@@ -4,7 +4,10 @@
 <head>
     <title>Node Authentication</title>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="mainController.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="modules.js"></script>
+    <script src="initController.js"></script>
+    <script src="main/mainController.js"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -14,9 +17,9 @@
         }
     </style>
 </head>
-<body>
-<div class="container" ng-app="main">
-
+<body ng-app="myWords">
+<div class="container">
+    <ui-view></ui-view>
     <div class="page-header text-center">
         <h1><span class="fa fa-anchor"></span> Profile Page</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
