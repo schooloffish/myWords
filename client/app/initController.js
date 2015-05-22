@@ -3,9 +3,8 @@
  */
 window.angular.module('myWords').config(['$stateProvider', function ($stateProvider) {
     $stateProvider.state('main', {
-        abstract: true,
         url: '/main',
-        templateUrl: '',
+        templateUrl: 'main/main.html',
         controller: 'mainController'
     });
     //$provide.decorator('$exceptionHandler',[]);

@@ -18,14 +18,14 @@
     </style>
 </head>
 <body ng-app="myWords">
+<ui-view></ui-view>
 <div class="container">
-    <ui-view></ui-view>
     <div class="page-header text-center">
         <h1><span class="fa fa-anchor"></span> Profile Page</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
 
-    <div class="row" ng-controller="mainController">
+    <div class="row">
 
         <!-- LOCAL INFORMATION -->
         <div class="col-sm-6">
