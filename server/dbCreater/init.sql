@@ -17,3 +17,5 @@ Definition VARCHAR(100) NOT NULL,
 Note VARCHAR(100) NULL,
 PRIMARY KEY (id)
 );
+
+INSERT INTO Phrase(Phrase,Sentence,Definition,Note) VALUES('Hello','Are you OK?','你好','');

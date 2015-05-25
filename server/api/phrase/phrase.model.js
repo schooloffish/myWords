@@ -6,6 +6,7 @@ module.exports = function (sequelize) {
         {
             phrase: {type: sequelize.constructor.STRING, field: 'Phrase'},
             definition: {type: sequelize.constructor.STRING, field: 'Definition'},
+            sentence: {type: sequelize.constructor.STRING, field: 'Sentence'},
             note: {type: sequelize.constructor.STRING, field: 'Note'}
         }, {
             timestamps: false,
