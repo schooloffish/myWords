@@ -1,7 +1,7 @@
-var path=require('path');
+var path = require('path');
 
-function getFullPath(subPath){
-    return path.join(__dirname,subPath);
+function getFullPath(subPath) {
+    return path.join(__dirname, subPath);
 }
 
 module.exports = function (app, passport) {
@@ -36,6 +36,8 @@ module.exports = function (app, passport) {
         req.logout();
         res.redirect('/');
     });
+
+    app.use('/api/phrase', require('./api/phrase/index'));
 };
 
 function isLoggedIn(req, res, next) {

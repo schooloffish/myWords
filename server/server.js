@@ -12,8 +12,8 @@ var session = require('express-session');
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize('mysql://root:123456@localhost:3306/MyWords');
 
-var User = require('./models/user')(sequelize);
-var Phrase = require('./models/phrase')(sequelize);
+var User = require('./api/user/user.model')(sequelize);
+var Phrase = require('./api/phrase/phrase.model.js')(sequelize);
 
 
 require('./config/passport')(passport, User);
