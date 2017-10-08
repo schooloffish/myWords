@@ -1,20 +1,25 @@
 {
-  "name": "node-api",
-  "main": "server.js",
+  "name": "angular2-quickstart",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./server/app.js"
+  },
+  "license": "ISC",
   "dependencies": {
-    "bcrypt-nodejs": "latest",
-    "body-parser": "~1.0.1",
-    "bower": "^1.4.1",
-    "connect-flash": "~0.1.1",
-    "cookie-parser": "~1.0.0",
-    "ejs": "~0.8.5",
-    "express": "~4.0.0",
-    "express-session": "~1.0.0",
-    "method-override": "~1.0.0",
-    "morgan": "~1.0.0",
-    "mysql": "^2.5.4",
-    "passport": "~0.1.17",
-    "passport-local": "~0.1.6",
-    "sequelize": "^2.1.0"
+    "@angular/common": "^2.3.1",
+    "@angular/core": "^2.3.1",
+    "@angular/forms": "^2.3.1",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^4.0.0-alpha.5",
+    "express": "^4.14.0",
+    "lodash": "^4.14.0",
+    "rxjs": "^5.0.0-rc.4",
+    "sequelize": "^4.10.3",
+    "sqlite3": "^3.1.12",
+    "xml2js": "^0.4.17",
+    "zone.js": "^0.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0"
   }
 }
