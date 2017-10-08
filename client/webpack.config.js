@@ -43,7 +43,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 // exclude: path.join(__dirname, 'app'),
-                use: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
             }
             // {
             //     test: /\.css$/,
