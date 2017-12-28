@@ -15,7 +15,7 @@ export class PhraseComponent {
     keycode: any;
     example: string;
     showNext: boolean;
-    showAddExample: boolean;    
+    showAddExample: boolean;
 
     constructor(private phraseService: PhraseService,
         private route: ActivatedRoute,
@@ -25,7 +25,7 @@ export class PhraseComponent {
         this.audio = new Audio();
         this.example = '';
     }
-    
+
     ngOnInit() {
         let id = this.route.params.subscribe((params) => {
             this.showMeaning = false;
@@ -41,7 +41,7 @@ export class PhraseComponent {
     private play() {
         this.audio.onended = () => {
             this.audio.onended = null;
-            if (this.phrase.sentences.length) {
+            if (this.phrase.sentences && this.phrase.sentences.length) {
                 this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + this.phrase.sentences[0] + '&type=2';
                 this.audio.play();
             }
@@ -52,7 +52,7 @@ export class PhraseComponent {
         this.audio.play();
     }
 
-    onKey(event:any) {
+    onKey(event: any) {
         if (event.code === 'ArrowRight') {
             this.next();
         }
