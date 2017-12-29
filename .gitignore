@@ -1,6 +1,8 @@
 /typings/
 /node_modules/
-/client_angular/node_modules/
 /.idea/
 *.log
+/client_angular/node_modules/
 /client_angular/dist/
+/client_react/node_modules/
+/client_react/dist/
