@@ -6,7 +6,9 @@
         <th>Update Date</th>
     </tr>
     <tr *ngFor="let phrase of allPhrases">
-        <td> {{phrase.phrase}}</td>
+        <td><a href="#" (click)="play(phrase)" (mouseover)="play(phrase)">
+            <span class="glyphicon glyphicon-volume-up"></span>
+        </a> {{phrase.phrase}}</td>
         <td>{{phrase.phonetic}}</td>
         <td>{{phrase.meaning}}</td>
         <td>{{phrase.update_time}}</td>

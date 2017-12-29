@@ -1,7 +1,9 @@
 <h1>My Vocabularies</h1>
 <ol>
     <li *ngFor="let vocabulary of vocabularies">
+        <a href="#" (click)="play(vocabulary)" (mouseover)="play(vocabulary)">
+            <span class="glyphicon glyphicon-volume-up"></span>
+        </a>
         <span>{{vocabulary}}</span>
-        <a href="#" (click)="play(vocabulary)" (mouseover)="play(vocabulary)"><img src="{{icon}}" alt=""></a>
     </li>
 </ol>

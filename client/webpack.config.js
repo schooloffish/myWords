@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+    watch: true,
     entry: {
         'polyfills': './app/polyfills.ts',
         'vendor': './app/vendor.ts',
