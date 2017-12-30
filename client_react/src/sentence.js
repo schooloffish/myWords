@@ -11,21 +11,25 @@ export class Sentence extends React.Component {
         this.play = this.play.bind(this);
     }
 
-    play(sentence) {
+    componentDidMount() {
+        this.props.sentenceStore.getAllSentence();
+    }
+
+    play(e, sentence) {
+        e.preventDefault();
+
         this.audio.pause();
         this.audio.src = `http://dict.youdao.com/dictvoice?audio=${sentence}&type=2`;
         this.audio.play();
-        return false;
     }
 
     render() {
         const { vocabularies } = this.props.sentenceStore;
         const vocabularyList = vocabularies.map((v, index) => <li key={index}>
-            <a onClick={this.play(v)} onMouseOver={this.play(v)}>
+            <a onClick={(e) => this.play(e, v)} onMouseOver={(e) => this.play(e, v)}>
                 <span className="glyphicon glyphicon-volume-up"></span>
-            </a>
-            {v}
-        </li>);
+            </a> {v}
+        </li >);
         return <div>
             <h1>My Vocabularies</h1>
             <ol>
