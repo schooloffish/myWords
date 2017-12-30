@@ -18,6 +18,9 @@ module.exports = {
                 test: /\.css$/,
                 // exclude: path.join(__dirname, 'app'),
                 loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+            }, {
+                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+                loader: 'file-loader'
             }
         ]
     },

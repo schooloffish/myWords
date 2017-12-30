@@ -5,7 +5,7 @@ import { App } from './app';
 import { Provider } from 'mobx-react';
 import { BrowserRouter } from 'react-router-dom';
 import { SentenceStore } from './sentenceStore';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const store = { sentenceStore: new SentenceStore() };
 
