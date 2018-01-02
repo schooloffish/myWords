@@ -12,7 +12,6 @@ export class PhraseComponent {
     title: string;
     audio: any;
     showMeaning: boolean;
-    keycode: any;
     example: string;
     showNext: boolean;
     showAddExample: boolean;

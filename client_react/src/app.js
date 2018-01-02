@@ -22,7 +22,7 @@ export class App extends React.Component {
                     <Route exact path='/' component={Home} />
                     <Route path='/allphrases' component={WordList} />
                     <Route path='/sentence' component={Sentence} />
-                    <Route path='/phrase/0' component={Phrase} />
+                    <Route path='/phrase/:id' component={Phrase} />
                 </Switch>
             </div>
             <div className="footer">

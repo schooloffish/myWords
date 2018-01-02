@@ -6,9 +6,10 @@ import { Provider } from 'mobx-react';
 import { BrowserRouter } from 'react-router-dom';
 import { SentenceStore } from './sentenceStore';
 import { WordListStore } from './wordListStore';
+import { PhraseStore } from './phraseStore';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-const store = { sentenceStore: new SentenceStore(), wordListStore: new WordListStore() };
+const store = { sentenceStore: new SentenceStore(), wordListStore: new WordListStore(), phraseStore: new PhraseStore() };
 
 ReactDOM.render(
     <Provider {...store}>
