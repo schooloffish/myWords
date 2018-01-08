@@ -3,27 +3,10 @@ import { observer } from 'mobx-react';
 
 @observer(['phraseStore'])
 export class Phrase extends React.Component {
-    audio;
 
     constructor(props) {
         super(props);
-        this.audio = new Audio();
-        this.play = this.play.bind(this);
         this.onKey = this.onKey.bind(this);
-    }
-
-    play(e, phrase) {
-        e.preventDefault;
-        this.audio.onended = () => {
-            this.audio.onended = null;
-            if (phrase.sentences && phrase.sentences.length) {
-                this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + phrase.sentences[0] + '&type=2';
-                this.audio.play();
-            }
-        };
-        this.audio.pause();
-        this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + phrase.phrase + '&type=2';
-        this.audio.play();
     }
 
     onKey(e) {
@@ -48,7 +31,7 @@ export class Phrase extends React.Component {
             return <div >
                 <h2 className="text-center">{phrase.phrase}</h2>
                 <h2 className="text-center" style={{ color: 'gray', dispaly: 'inline-block' }}>{phrase.phonetic}
-                    <a href="#" onClick={(e) => this.play(e, phrase)}>
+                    <a href="#" onClick={(e) => store.play(e, phrase)}>
                         <span className="glyphicon glyphicon-volume-up"></span>
                     </a>
                 </h2>

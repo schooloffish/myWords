@@ -6,7 +6,8 @@ export class PhraseStore {
     @observable example = '';
     @observable showNext = false;
     @observable showAddExample = false;
-
+    audio;
+    
     constructor() {
         this.forget = this.forget.bind(this);
         this.exampleChange = this.exampleChange.bind(this);
@@ -14,6 +15,22 @@ export class PhraseStore {
         this.remember = this.remember.bind(this);
         this.addExample = this.addExample.bind(this);
         this.next = this.next.bind(this);
+        this.audio = new Audio();
+        this.play = this.play.bind(this);
+    }
+
+    play(e, phrase) {
+        e&&e.preventDefault();
+        this.audio.onended = () => {
+            this.audio.onended = null;
+            if (phrase.sentences && phrase.sentences.length) {
+                this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + phrase.sentences[0] + '&type=2';
+                this.audio.play();
+            }
+        };
+        this.audio.pause();
+        this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + phrase.phrase + '&type=2';
+        this.audio.play();
     }
 
     @action next() {
@@ -27,6 +44,7 @@ export class PhraseStore {
         this.showNext = false;
         fetch('/api/v1/phrase/' + id).then(res => res.json()).then(action((data => {
             this.phrase = data;
+            this.play(undefined, data);
         })));
     }
 

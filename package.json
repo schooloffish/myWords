@@ -2,7 +2,13 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./server/app.js"
+    "start": "node ./server/app.js",
+    "react": "cd client_react&npm run build",
+    "angular": "cd client_angular&npm run build",
+    "move:react": "cpx client_react/dist/**/*.* ./dist",
+    "move:angular": "cpx client_angular/dist/**/*.* ./dist",
+    "clean": "rimraf ./dist",
+    "build": "npm-run-all clean react angular move:*"
   },
   "license": "ISC",
   "dependencies": {
@@ -19,6 +25,9 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "concurrently": "^2.0.0"
+    "concurrently": "^2.0.0",
+    "cpx": "^1.5.0",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2"
   }
 }
